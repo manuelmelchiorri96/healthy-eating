@@ -1,0 +1,14 @@
+<div class="container">
+    <h2 class="text-center mb-4">Healthy Eating</h2>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let fruit of fruits">
+            <div class="card mb-3">
+                <img [src]="fruit.imageUrl" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ fruit.name }}</h5>
+                    <p class="card-text">{{ fruit.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
