@@ -1,31 +1,35 @@
 <div class="container">
-    <h2 class="text-center mb-4">Healthy Eating</h2>
+    <div class="box-intro">
+        <img class="logo" src="../assets/logo.jpeg" alt="">
+        <h2 class="">Healthy Eating</h2>
+    </div>
 
-    <form>
+    <form class="pb-4 pt-4">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Cerca frutto..." [(ngModel)]="searchTerm"
                 name="searchTerm" (input)="searchFruit()">
         </div>
-        <button type="submit" class="btn btn-primary">Cerca</button>
     </form>
 
     <div class="row">
-        <div class="col-md-4" *ngFor="let fruit of filteredFruits">
-            <div class="card mb-3">
-                <img [src]="fruit.imageUrl" class="card-img-top" alt="">
+        <div class="box-fruit col-md-4" *ngFor="let fruit of filteredFruits">
+            <div class="card mb-3" [ngClass]="{'blurred': selectedFruit === fruit}">
+                <div class="fruit-image-wrapper">
+                    <img [src]="fruit.imageUrl" class="card-img-top" alt="">
+                    <div class="informazioni-nutrizionali ps-3 pt-4" *ngIf=" selectedFruit===fruit">
+                        <h5 class="pb-4">Informazioni Nutrizionali</h5>
+                        <p>Calorie: {{ fruit.nutritions.calories }}</p>
+                        <p>Grassi: {{ fruit.nutritions.fat }}g</p>
+                        <p>Zuccheri: {{ fruit.nutritions.sugar }}g</p>
+                        <p>Carboidrati: {{ fruit.nutritions.carbohydrates }}g</p>
+                        <p>Proteine: {{ fruit.nutritions.protein }}g</p>
+                    </div>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ fruit.name }}</h5>
                     <p class="card-text">{{ fruit.description }}</p>
-                    <button (click)="toggleNutritionalInfo(fruit)" class="btn btn-info">Dettagli nutrizionali</button>
-                </div>
-
-                <div *ngIf="selectedFruit === fruit">
-                    <h5>Informazioni Nutrizionali</h5>
-                    <p>Calorie: {{ fruit.nutritions.calories }}</p>
-                    <p>Grassi: {{ fruit.nutritions.fat }}g</p>
-                    <p>Zuccheri: {{ fruit.nutritions.sugar }}g</p>
-                    <p>Carboidrati: {{ fruit.nutritions.carbohydrates }}g</p>
-                    <p>Proteine: {{ fruit.nutritions.protein }}g</p>
+                    <button (click)="toggleNutritionalInfo(fruit)" class="btn btn-success">Dettagli
+                        nutrizionali</button>
                 </div>
             </div>
         </div>

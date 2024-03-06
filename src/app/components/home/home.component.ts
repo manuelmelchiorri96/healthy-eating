@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HealthyEatingService } from '../../service/healthy-eating.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HealthyEatingService } from '../../service/healthy-eating.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   fruits: any[] = [];
   searchTerm: string = '';
   filteredFruits: any[] = [];
@@ -17,7 +17,10 @@ export class HomeComponent {
   ngOnInit(): void {
     this.healthyEatingService.getAllFruits().subscribe({
       next: (data: any) => {
-        this.fruits = data;
+        this.fruits = data.map((fruit: any) => ({
+          ...fruit,
+          imageUrl: `../assets/${fruit.name.toLowerCase()}.jpeg`,
+        }));
         this.filteredFruits = this.fruits;
       },
       error: (error) => {
