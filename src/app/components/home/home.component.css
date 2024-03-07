@@ -41,3 +41,22 @@
     width: 100%;
     height: 100%;
 }
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 1068px) {
+
+    .form-control {
+        max-width: 90%;
+    }
+
+    .box-fruit {
+        flex: 0 0 100%;
+        max-width: 90%;
+    }
+}
