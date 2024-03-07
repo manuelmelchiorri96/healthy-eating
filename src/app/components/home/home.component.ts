@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
       next: (data: any) => {
         this.fruits = data.map((fruit: any) => ({
           ...fruit,
-          imageUrl: `../assets/${fruit.name.toLowerCase()}.jpeg`,
+          imageUrl: `../assets/${this.checkNameFruit(fruit.name)}.jpeg`,
         }));
         this.filteredFruits = this.fruits;
       },
@@ -27,6 +27,10 @@ export class HomeComponent implements OnInit {
         console.error(error);
       },
     });
+  }
+
+  checkNameFruit(name: string): string {
+    return name.toLowerCase().replace(/\s+/g, '');
   }
 
   searchFruit() {
