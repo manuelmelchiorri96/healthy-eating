@@ -50,13 +50,27 @@
 }
 
 @media (max-width: 1068px) {
-
-    .form-control {
+    .container {
         max-width: 90%;
+    }
+
+    .box-intro {
+        max-width: 100%;
     }
 
     .box-fruit {
         flex: 0 0 100%;
-        max-width: 90%;
+        max-width: 100%;
+    }
+
+    .form-group {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .form-control {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
