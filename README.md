@@ -1,6 +1,6 @@
-# Healthy Eating App
+# Healthy Eating
 
-![Healthy Eating App](./demo.png)
+![Healthy Eating](./src/assets/logo.jpeg)
 
 Healthy Eating App è una semplice applicazione web che consente agli utenti di cercare e visualizzare informazioni nutrizionali sui frutti.
 
