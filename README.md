@@ -15,6 +15,7 @@ Healthy Eating App è una semplice applicazione web che consente agli utenti di 
 
 - Angular: framework per lo sviluppo front-end.
 - TypeScript: linguaggio di programmazione per lo sviluppo di Angular.
+- Bootstrap: libreria per facilitare lo stile e layout dell' applicazione.
 - CSS: per lo stile e il layout dell'applicazione.
 - HTML: per la struttura delle pagine web.
 - Service: modulo per l'accesso ai dati relativi ai frutti.
