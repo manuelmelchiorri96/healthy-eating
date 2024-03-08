@@ -44,4 +44,4 @@ Segui questi passaggi per installare e avviare l'applicazione localmente:
 
 ## Licenza
 
-Questo progetto è distribuito sotto la [GNU General Public License v3.0](./LICENSE). Vedere il file `LICENSE` per ulteriori informazioni.
+Questo progetto è distribuito sotto la [GNU General Public License v3.0](./LICENSE.txt). Vedere il file `LICENSE` per ulteriori informazioni.
