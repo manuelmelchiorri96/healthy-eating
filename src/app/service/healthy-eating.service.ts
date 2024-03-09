@@ -13,12 +13,4 @@ export class HealthyEatingService {
   getAllFruits(): Observable<any> {
     return this.http.get(`${this.baseUrl}/fruit/all`);
   }
-
-  getFruitById(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/fruit/${id}`);
-  }
-
-  getFruitByName(name: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/fruit/${name}`);
-  }
 }
